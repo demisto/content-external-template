@@ -29,7 +29,6 @@ jobs:
     - name: Install dependencies
       run: |
         pip install demisto-sdk
-
     # Runs a set of commands using the runners shell
     - name: Run lint on all the packs
       run: |
