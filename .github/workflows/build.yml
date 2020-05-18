@@ -35,10 +35,12 @@ jobs:
         mkdir foo
         demisto-sdk lint -a --log-path ./foo
     - name: Archive unit test results
+      if: succeeded() || failed()
       uses: actions/upload-artifact@v1
       with:
         name: lint_debug_log
         path: foo/lint_debug_log.log
     - name: Validate all packs
+      if: succeeded() || failed()
       run: |
         demisto-sdk validate -a
