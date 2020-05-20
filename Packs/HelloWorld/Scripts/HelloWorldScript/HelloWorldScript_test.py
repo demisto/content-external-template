@@ -16,7 +16,7 @@ Unit tests can be checked in 3 ways:
 - From PyCharm
 
 Example with demisto-sdk (from the content root directory):
-demisto-sdk lint -d Packs/HelloWorld/Scripts/HelloWorldScriptPrivate
+demisto-sdk lint -d Packs/HelloWorld/Scripts/HelloWorldScript
 
 Coverage
 --------
