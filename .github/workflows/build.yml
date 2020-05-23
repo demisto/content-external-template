@@ -44,7 +44,7 @@ jobs:
         demisto-sdk validate -a
     - name: Create Artifacts
       if: ${{ always() }}
-      run: demist-sdk create-content-artifacts --packs --artifacts_path foo/
+      run: demisto-sdk create-content-artifacts --packs --artifacts_path foo/
     - name: Archive Content Packs zip
       if: ${{ always() }}
       uses: actions/upload-artifact@v1
