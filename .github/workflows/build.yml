@@ -28,26 +28,26 @@ jobs:
           ${{ runner.os }}-pip-
     - name: Install dependencies
       run: |
-        pip install git+https://github.com/demisto/demisto-sdk.git@create-artifacts-in-private
+        pip install -r .github/requirements.txt
     # Runs a set of commands using the runners shell
     - name: Run lint on all the packs
       run: |
-        mkdir foo
-        demisto-sdk lint -a --log-path ./foo
+        mkdir artifacts
+        demisto-sdk lint -a --log-path ./artifacts
     - name: Archive unit test results
       uses: actions/upload-artifact@v1
       with:
         name: lint_debug_log
-        path: foo/lint_debug_log.log
+        path: artifacts/lint_debug_log.log
     - name: Validate all packs
       run: |
         demisto-sdk validate -a
     - name: Create Artifacts
       if: ${{ always() }}
-      run: demisto-sdk create-content-artifacts --packs --artifacts_path foo/
+      run: demisto-sdk create-content-artifacts --packs --artifacts_path artifacts/
     - name: Archive Content Packs zip
       if: ${{ always() }}
       uses: actions/upload-artifact@v1
       with:
         name: content_packs
-        path: foo/content_packs.zip
+        path: artifacts/content_packs.zip
