@@ -1,1 +1,1 @@
-demisto-sdk==1.0.9
+demisto-sdk==git+https://github.com/demisto/demisto-sdk.git@clean-regexes
