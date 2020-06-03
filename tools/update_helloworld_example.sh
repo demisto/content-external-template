@@ -1,11 +1,10 @@
 #!/bin/bash
 
-mktemp -d /tmp/content
-git clone git@github.com:demisto/content.git /tmp/content
+tmp_dir=$(mktemp -d)
+git clone git@github.com:demisto/content.git $tmp_dir
 
-echo Copying Hello World example
-mv /tmp/content/Packs/HelloWorld Packs
+echo "Copying Hello World example from ${tmp_dir}/Packs/HelloWorld"
+rm -rf Packs/HelloWorld
+mv "${tmp_dir}/Packs/HelloWorld Packs"
 
-echo Deleting the cloned content repository
-rm -rf tmp/content
-
+rm -rf ${tmp_dir}
