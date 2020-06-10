@@ -39,6 +39,12 @@ if [ "$1" == "-u" -o "$1" == "--update" ]; then
     exit 0
 fi
 
+if [ ! -f CommonServerPython.py -a  ! -f demistomock.py ]; then
+    echo "Download CommonServerPython and other dev required files"
+    echo $(pwd)
+    bash ./tools/update_repo.sh
+fi
+
 if [ ! "$PWD" == "$(git rev-parse --show-toplevel)" ]; then
     cat >&2 <<__EOF__
 ERROR: this script must be run at the root of the source tree
@@ -64,7 +70,7 @@ fi
 echo "======================="
 
 if [ -n "$NO_VENV" ]; then
-    echo "Skipping venv setup as environment varialbe NO_VENV is set"
+    echo "Skipping venv setup as environment variable NO_VENV is set"
 else
     if [ ! -e "${PWD}/venv" ]; then
         echo "Initializing virtual env..."
