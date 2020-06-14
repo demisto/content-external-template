@@ -28,7 +28,13 @@ jobs:
           ${{ runner.os }}-pip-
     - name: Install dependencies
       run: |
+        pwd
+        mkdir Packs
+        ls -la
+
         pip install -r .github/requirements.txt
+        tools/update_helloworld_example.sh
+        tools/update_repo.sh
     # Runs a set of commands using the runners shell
     - name: Run lint on all the packs
       run: |

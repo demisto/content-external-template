@@ -10,7 +10,7 @@ output_paths=(
     "dev_envs/default_python3/Pipfile"
     "dev_envs/default_python3/Pipfile.lock"
     "dev_envs/pytest/conftest.py"
-    "dev-requirements-py2.txt",
+    "dev-requirements-py2.txt"
     "dev-requirements-py3.txt"
 )
 
@@ -28,7 +28,12 @@ url_to_fetch_from=(
     "https://raw.githubusercontent.com/demisto/content/master/dev-requirements-py3.txt"
 )
 
+mkdir -p dev_envs/default_python2
+mkdir -p dev_envs/default_python3
+mkdir -p dev_envs/pytest
+
 is_failed=0
+
 
 for i in ${!output_paths[@]};
 do
