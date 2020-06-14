@@ -28,12 +28,14 @@ jobs:
           ${{ runner.os }}-pip-
     - name: Install dependencies
       run: |
-        pwd
-        mkdir Packs
-        ls -la
-
+        mkdir -p Packs
         pip install -r .github/requirements.txt
-        tools/update_helloworld_example.sh
+
+        if [ ! "$(ls -A Packs)" ]; then
+          echo No files in Packs
+          tools/update_helloworld_example.sh
+        fi
+
         tools/update_repo.sh
     # Runs a set of commands using the runners shell
     - name: Run lint on all the packs
