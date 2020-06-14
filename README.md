@@ -33,4 +33,5 @@ Follow [invite collaborator](https://help.github.jp/enterprise/2.11/user/article
 Invite `content-bot` user.
 
 ### Setup your development environment
-Then follow [development setup](https://xsoar.pan.dev/docs/integrations/dev-setup) article 
+Then follow [development setup](https://xsoar.pan.dev/docs/integrations/dev-setup) article
+ 

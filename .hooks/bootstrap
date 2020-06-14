@@ -38,12 +38,16 @@ if [ "$1" == "-u" -o "$1" == "--update" ]; then
         venv/bin/pip3 install -r dev-requirements-py3.txt
     fi
     echo "Done updating dependencies"
+
+    echo "Updating CommonServerPython and other dev required files ..."
+    bash ./tools/update_repo.sh
+    echo "Done updating CommonServerPython and other dev required files"
+
     exit 0
 fi
 
 if [ ! -f CommonServerPython.py -a  ! -f demistomock.py ]; then
     echo "Download CommonServerPython and other dev required files"
-    echo $(pwd)
     bash ./tools/update_repo.sh
 fi
 
