@@ -1,4 +1,5 @@
 # Getting Started   
+### Creating New Repository
 Create new private repository using [Github.UI](https://github.com/new)
 ```
 git clone --bare https://github.com/demisto/content-external-template.git
@@ -26,3 +27,10 @@ git remote add content-template https://github.com/demisto/content-external-temp
 git pull content-template master # Creates a merge commit
 git push origin master
 ```
+
+### Adding content-bot as a contributor
+Follow [invite collaborator](https://help.github.jp/enterprise/2.11/user/articles/inviting-collaborators-to-a-personal-repository/) guide.  
+Invite `content-bot` user.
+
+### Setup your development environment
+Then follow [development setup](https://xsoar.pan.dev/docs/integrations/dev-setup) article 
