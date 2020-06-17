@@ -22,6 +22,8 @@ EOF
 exit 0
 fi
 
+mkdir -p Packs
+
 if [ "$1" == "-u" -o "$1" == "--update" ]; then
     if [ ! -f "venv/bin/pip2" -a ! -f "venv/bin/pip3" ]; then
         echo "ERROR: It seems that venv hasn't been setup. Run $0 to fully setup the venv without the [$1] option."
@@ -36,12 +38,16 @@ if [ "$1" == "-u" -o "$1" == "--update" ]; then
         venv/bin/pip3 install -r dev-requirements-py3.txt
     fi
     echo "Done updating dependencies"
+
+    echo "Updating CommonServerPython and other dev required files ..."
+    bash ./tools/update_repo.sh
+    echo "Done updating CommonServerPython and other dev required files"
+
     exit 0
 fi
 
 if [ ! -f CommonServerPython.py -a  ! -f demistomock.py ]; then
     echo "Download CommonServerPython and other dev required files"
-    echo $(pwd)
     bash ./tools/update_repo.sh
 fi
 
