@@ -30,7 +30,7 @@ git push origin master
 
 ### Adding content-bot as a contributor
 Follow [invite collaborator](https://help.github.jp/enterprise/2.11/user/articles/inviting-collaborators-to-a-personal-repository/) guide.  
-Invite `content-bot` user.
+Invite `xsoar-bot` user.
 
 ### Setup your development environment
 Then follow [development setup](https://xsoar.pan.dev/docs/integrations/dev-setup) article
