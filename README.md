@@ -1,6 +1,26 @@
 # Getting Started   
 ### Creating New Repository
-Presss `Use this Template` button and choose to fork the repository as private repository.
+Press the `Use this Template` button and choose to fork the repository as private repository.
+
+#### In case the private repository exists
+```
+git clone --bare https://github.com/demisto/content-external-template.git
+cd content-external-template.git
+git push --mirror https://github.com/yourname/private-repo.git
+cd ..
+rm -rf content-external-template.git
+```
+
+
+Clone the private repository so you can start working on it
+
+```
+git clone https://github.com/yourname/private-repo.git
+cd private-repo
+make some changes
+git commit
+git push origin master
+```
 
 ### Adding content-bot as a contributor
 Follow [invite collaborator](https://help.github.jp/enterprise/2.11/user/articles/inviting-collaborators-to-a-personal-repository/) guide.  
