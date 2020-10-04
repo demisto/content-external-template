@@ -16,5 +16,14 @@ Creating a pack is the same process as in the public repository. Follow [Getting
 When you open a pull request in your private repository, when the pull request is ready for review, assign `xsoar-bot` and add the label `ready-for-review`.  
 After that we will ask you to invite and assign someone from the XSOAR content team members to review the pull request.
 
+### Update your repository
+In order to sync/merge from the `content-external-template` repository from time to time.
+```
+cd private-repo
+git remote add content-template https://github.com/demisto/content-external-template.git
+git pull content-template master # Creates a merge commit
+git push origin master
+```
+
 **IMPORTANT: Merge the pull request only after it approved by one of XSOAR content team members.**
  
