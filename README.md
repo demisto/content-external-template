@@ -22,7 +22,7 @@ git commit
 git push origin master
 ```
 
-### Adding content-bot as a contributor
+### Adding xsoar-bot as a contributor
 Follow [invite collaborator](https://help.github.jp/enterprise/2.11/user/articles/inviting-collaborators-to-a-personal-repository/) guide.  
 Invite `xsoar-bot` user.
 
