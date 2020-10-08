@@ -3,10 +3,10 @@
 Create new private repository using [Github.UI](https://github.com/new)
 ```
 git clone --bare https://github.com/demisto/content-external-template.git
-cd content
+cd content-external-template.git
 git push --mirror https://github.com/yourname/private-repo.git
 cd ..
-rm -rf content-external-template
+rm -rf content-external-template.git
 ```
 
 
@@ -24,14 +24,25 @@ In order to sync from the `content-external-template` repository from time to ti
 ```
 cd private-repo
 git remote add content-template https://github.com/demisto/content-external-template.git
-git pull content-template master # Creates a merge commit
+git pull content-template master
 git push origin master
 ```
 
 ### Adding content-bot as a contributor
 Follow [invite collaborator](https://help.github.jp/enterprise/2.11/user/articles/inviting-collaborators-to-a-personal-repository/) guide.  
-Invite `content-bot` user.
+Invite `xsoar-bot` user.
 
 ### Setup your development environment
 Then follow [development setup](https://xsoar.pan.dev/docs/integrations/dev-setup) article
- 
+
+### Pull Request
+- Create new branch
+- Make your changes
+- Commit and push
+- Create new Pull Request
+- Add the label `ready-for-review` when the pull request is ready for review
+- Add `content-bot` as a reviewer
+
+### Review
+Someone from Palo Alto Networks Cortex XSOAR Content team will be assigned to review your pull request.
+
