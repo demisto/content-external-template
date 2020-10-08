@@ -41,7 +41,7 @@ In order to sync/merge from the `content-external-template` repository from time
 ```
 cd private-repo
 git remote add content-template https://github.com/demisto/content-external-template.git
-git pull content-template master # Creates a merge commit
+git pull content-template master
 git push origin master
 ```
 
