@@ -10,5 +10,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Run command
+      env: 
+        sha: ${{ github.sha }}
       run: |
-        echo 'Hello'
+        echo Hello ${sha}
