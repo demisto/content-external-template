@@ -8,15 +8,16 @@ jobs:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
     steps:
+    - name: Save current branch in env
+      uses: nelonoel/branch-name@v1
     - uses: actions/checkout@v2
     - name: Run command
       env: 
-        github_base_ref: ${{ github.base_ref }}
-        github_head_ref: ${{ github.head_ref }}
+        GITHUB_REPOSITORY: ${{ env.GITHUB_REPOSITORY }}
         github_run_id: ${{ github.run_id }}
         github_run_number: ${{ github.run_number }}
       run: |
-        echo github_base_ref ${github_base_ref}
-        echo github_head_ref ${github_head_ref}
+        echo GITHUB_REPOSITORY ${GITHUB_REPOSITORY}
         echo github_run_id ${github_run_id}
         echo github_run_number ${github_run_number}
+        echo ${BRANCH_NAME}
