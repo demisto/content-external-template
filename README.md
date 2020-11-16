@@ -12,7 +12,7 @@ rm -rf content-external-template.git
 ```
 
 
-Clone the private repository so you can start working on it
+Clone the private repository so you can start
 
 ```
 git clone https://github.com/yourname/private-repo.git
