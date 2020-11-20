@@ -8,6 +8,14 @@ jobs:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
     steps:
+    - uses: jwalton/gh-find-current-pr@v1
+      id: findPr
+      with:
+        github-token: ${{ secrets.GITHUB_TOKEN }}
+    - run: echo "Your PR is ${PR}"
+      if: success() && steps.findPr.outputs.number
+      env:
+        PR: ${{ steps.findPr.outputs.pr }}
     - uses: actions/checkout@v2
     - name: Run command
       env: 
@@ -15,6 +23,7 @@ jobs:
         github_run_id: ${{ github.run_id }}
         github_run_number: ${{ github.run_number }}
         GITHUB_REF: ${{ env.GITHUB_REF }}
+        GITHUB_ACTOR: ${{ GITHUB_ACTOR }}
       run: |
         echo GITHUB_REPOSITORY ${GITHUB_REPOSITORY}
         echo github_run_id ${github_run_id}
@@ -22,3 +31,5 @@ jobs:
         echo ${GITHUB_REF##*/}
         BRANCH_NAME=${GITHUB_REF##*/}
         echo 'BRANCH_NAME=${BRANCH_NAME}' >> ${GITHUB_ENV}
+        echo $GITHUB_ACTOR
+        
