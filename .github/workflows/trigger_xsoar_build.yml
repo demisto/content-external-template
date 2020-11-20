@@ -24,6 +24,7 @@ jobs:
         github_run_number: ${{ github.run_number }}
         GITHUB_REF: ${{ env.GITHUB_REF }}
         GITHUB_ACTOR: ${{ env.GITHUB_ACTOR }}
+        GITHUB_EVENT_PATH: ${{ env.GITHUB_EVENT_PATH }}
       run: |
         echo GITHUB_REPOSITORY ${GITHUB_REPOSITORY}
         echo github_run_id ${github_run_id}
@@ -32,4 +33,5 @@ jobs:
         BRANCH_NAME=${GITHUB_REF##*/}
         echo 'BRANCH_NAME=${BRANCH_NAME}' >> ${GITHUB_ENV}
         echo $GITHUB_ACTOR
+        $(cat ${GITHUB_EVENT_PATH})
         
