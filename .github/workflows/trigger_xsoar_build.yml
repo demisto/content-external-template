@@ -33,5 +33,5 @@ jobs:
         BRANCH_NAME=${GITHUB_REF##*/}
         echo 'BRANCH_NAME=${BRANCH_NAME}' >> ${GITHUB_ENV}
         echo $GITHUB_ACTOR
-        $(cat ${GITHUB_EVENT_PATH})
+        cat ${GITHUB_EVENT_PATH}
         
