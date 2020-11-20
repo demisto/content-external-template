@@ -23,7 +23,7 @@ jobs:
         github_run_id: ${{ github.run_id }}
         github_run_number: ${{ github.run_number }}
         GITHUB_REF: ${{ env.GITHUB_REF }}
-        GITHUB_ACTOR: ${{ GITHUB_ACTOR }}
+        GITHUB_ACTOR: ${{ env.GITHUB_ACTOR }}
       run: |
         echo GITHUB_REPOSITORY ${GITHUB_REPOSITORY}
         echo github_run_id ${github_run_id}
