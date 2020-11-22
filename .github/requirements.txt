@@ -1,1 +1,1 @@
-git+https://github.com/demisto/demisto-sdk.git@master
+demisto-sdk
