@@ -52,12 +52,12 @@ jobs:
         name: lint_debug_log
         path: artifacts/lint_debug_log.log
     - name: Create ID Set
-      env:
-        GCS_MARKET_KEY: ${{ secrets.GCS_MARKET_KEY }}
+#      env:
+#        GCS_MARKET_KEY: ${{ secrets.GCS_MARKET_KEY }}
       run: |
-        GCS_PATH=$(mktemp)
-        echo "$GCS_MARKET_KEY" > "$GCS_PATH"
-        gcloud auth activate-service-account --key-file="$GCS_PATH" > auth.out 2>&1
+#        GCS_PATH=$(mktemp)
+#        echo "$GCS_MARKET_KEY" > "$GCS_PATH"
+#        gcloud auth activate-service-account --key-file="$GCS_PATH" > auth.out 2>&1
 
         demisto-sdk create-id-set -o ./Tests/id_set.json
 
