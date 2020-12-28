@@ -52,8 +52,6 @@ jobs:
         name: lint_debug_log
         path: artifacts/lint_debug_log.log
     - name: Create ID Set
-      with:
-        repository: demisto/content
       run: |
 
         demisto-sdk create-id-set -o artifacts/pack_id_set.json
