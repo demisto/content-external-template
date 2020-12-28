@@ -53,21 +53,21 @@ jobs:
         path: artifacts/lint_debug_log.log
     - name: Create ID Set
       run: |
-        export CIRCLE_ARTIFACTS="/home/runner/work/content-external-template/content-external-template/artifacts"
+#        export CIRCLE_ARTIFACTS="/home/runner/work/content-external-template/content-external-template/artifacts"
 
-        demisto-sdk create-id-set -o $CIRCLE_ARTIFACTS/pack_id_set.json
+        demisto-sdk create-id-set -o artifacts/pack_id_set.json
 
-        gsutil -m cp -r gs://marketplace-dist/content/private_id_set.json $CIRCLE_ARTIFACTS/private_id_set.json
-        gsutil -m cp -r gs://marketplace-dist/content/id_set.json $CIRCLE_ARTIFACTS/id_set.json
+        gsutil -m cp -r gs://marketplace-dist/content/private_id_set.json artifacts/private_id_set.json
+        gsutil -m cp -r gs://marketplace-dist/content/id_set.json artifacts/id_set.json
 
-        demisto-sdk merge-id-sets -i1 $CIRCLE_ARTIFACTS/pack_id_set.json -i2 $CIRCLE_ARTIFACTS/private_id_set.json -o $CIRCLE_ARTIFACTS/pack_id_set.json
-        demisto-sdk merge-id-sets -i1 $CIRCLE_ARTIFACTS/pack_id_set.json -i2 $CIRCLE_ARTIFACTS/id_set.json -o $CIRCLE_ARTIFACTS/pack_id_set.json
+        demisto-sdk merge-id-sets -i1 artifacts/pack_id_set.json -i2 $CIRCLE_ARTIFACTS/private_id_set.json -o artifacts/pack_id_set.json
+        demisto-sdk merge-id-sets -i1 artifacts/pack_id_set.json -i2 $CIRCLE_ARTIFACTS/id_set.json -o artifacts/pack_id_set.json
     - name: Validate all packs
       run: |
         demisto-sdk validate -a
     - name: Create Artifacts
       if: ${{ always() }}
-      run: demisto-sdk create-content-artifacts --packs --artifacts_path artifacts/ -a $CIRCLE_ARTIFACTS
+      run: demisto-sdk create-content-artifacts --packs --artifacts_path artifacts/
     - name: Archive Content Packs zip
       if: ${{ always() }}
       uses: actions/upload-artifact@v1
