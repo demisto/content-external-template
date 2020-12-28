@@ -52,8 +52,6 @@ jobs:
         name: lint_debug_log
         path: artifacts/lint_debug_log.log
     - name: Create ID Set
-#      env:
-#        GCS_MARKET_KEY: ${{ secrets.GCS_MARKET_KEY }}
       run: |
 #        GCS_PATH=$(mktemp)
 #        echo "$GCS_MARKET_KEY" > "$GCS_PATH"
