@@ -78,3 +78,6 @@ jobs:
       with:
         name: content_packs
         path: artifacts/content_packs.zip
+    - name: Archive Content Packs zip
+        if: ${{ always() }}
+
