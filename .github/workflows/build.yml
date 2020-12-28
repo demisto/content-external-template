@@ -61,6 +61,7 @@ jobs:
         gsutil -m cp -r gs://marketplace-dist/content/private_id_set.json artifacts/private_id_set.json
         gsutil -m cp -r gs://marketplace-dist/content/id_set.json artifacts/id_set.json
 
+        # add script to handle HW
         python3 Tests/Marketplace/prepare_private_id_set_for_merge.py -np "HelloWorld" -pis artifacts/id_set.json
 
         demisto-sdk merge-id-sets -i1 artifacts/pack_id_set.json -i2 artifacts/private_id_set.json -o artifacts/pack_id_set.json
