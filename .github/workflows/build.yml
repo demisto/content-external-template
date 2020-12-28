@@ -53,7 +53,6 @@ jobs:
         path: artifacts/lint_debug_log.log
     - name: Create ID Set
       run: |
-#        export CIRCLE_ARTIFACTS="/home/runner/work/content-external-template/content-external-template/artifacts"
 
         demisto-sdk create-id-set -o artifacts/pack_id_set.json
 
