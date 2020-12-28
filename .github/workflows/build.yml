@@ -56,6 +56,7 @@ jobs:
 
         demisto-sdk create-id-set -o artifacts/pack_id_set.json
 
+
         gsutil -m cp -r gs://marketplace-dist/content/private_id_set.json artifacts/private_id_set.json
         gsutil -m cp -r gs://marketplace-dist/content/id_set.json artifacts/id_set.json
 
