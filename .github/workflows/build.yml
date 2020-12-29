@@ -69,7 +69,7 @@ jobs:
       uses: actions/upload-artifact@v1
       with:
         name: pack_id_set
-        path: artifacts/pack_id_set.json
+        path: artifacts/id_set.json
     - name: Validate all packs
       run: |
         git fetch
