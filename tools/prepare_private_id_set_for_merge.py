@@ -2,6 +2,13 @@ import json
 import argparse
 
 
+def get_new_pack_name_from_new_id_set():
+    with open('artifacts/pack_id_set.json', 'r') as id_set_file:
+        private_id_set = json.load(id_set_file)
+    new_pack_name = private_id_set.keys()[0][0].keys().get('pack')
+    return new_pack_name
+
+
 def remove_old_pack_from_private_id_set(private_id_set, new_pack_name):
     """Removes the old data of the new pack from the private id set.
 
@@ -12,6 +19,8 @@ def remove_old_pack_from_private_id_set(private_id_set, new_pack_name):
     Returns:
         Private id set without the old data of the new package
     """
+    if not new_pack_name:
+        new_pack_name = get_new_pack_name_from_new_id_set()
     for content_entity, content_entity_value_list in private_id_set.items():
         for content_entity_value in content_entity_value_list[:]:
             content_item_value = content_entity_value.get(list(content_entity_value.keys())[0], {})
@@ -33,7 +42,7 @@ def get_and_set_private_id_set_by_path(private_id_set_path, new_pack_name):
 def options_handler():
     parser = argparse.ArgumentParser(description='Removes the old information that exists on the changed pack,'
                                                  ' from private ID set')
-    parser.add_argument('-np', '--new_pack_name', help='New pack name', required=True)
+    parser.add_argument('-np', '--new_pack_name', help='New pack name', required=False)
     parser.add_argument('-pis', '--private_id_set_path', help='Private ID set path', required=True)
 
     options = parser.parse_args()
