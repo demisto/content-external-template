@@ -69,7 +69,7 @@ jobs:
         demisto-sdk validate -a --id-set-path artifacts/pack_id_set.json
     - name: Create Artifacts
       if: ${{ always() }}
-      run: demisto-sdk create-content-artifacts --artifacts_path artifacts/
+      run: demisto-sdk create-content-artifacts --artifacts_path artifacts
     - name: Archive Content Packs zip
       if: ${{ always() }}
       uses: actions/upload-artifact@v1
