@@ -5,7 +5,12 @@ import argparse
 def get_new_pack_name_from_new_id_set():
     with open('artifacts/pack_id_set.json', 'r') as id_set_file:
         private_id_set = json.load(id_set_file)
-    new_pack_name = private_id_set.keys()[0][0].keys().get('pack')
+    new_pack_name = ''
+    for content_entity, content_entity_value_list in private_id_set.items():
+        for content_entity_value in content_entity_value_list[:]:
+            content_item_value = content_entity_value.get(list(content_entity_value.keys())[0], {})
+            new_pack_name = content_item_value.get('pack')
+            break
     return new_pack_name
 
 
