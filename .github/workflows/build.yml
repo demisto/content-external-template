@@ -51,14 +51,32 @@ jobs:
       with:
         name: lint_debug_log
         path: artifacts/lint_debug_log.log
+    - name: Create ID Set
+      run: |
+        demisto-sdk create-id-set -o artifacts/pack_id_set.json
+
+        gsutil -m cp -r gs://marketplace-dist/content/private_id_set.json artifacts/private_id_set.json
+        gsutil -m cp -r gs://marketplace-dist/content/id_set.json artifacts/id_set.json
+
+        demisto-sdk merge-id-sets -i1 artifacts/private_id_set.json -i2 artifacts/id_set.json -o artifacts/id_set.json
+        demisto-sdk merge-id-sets -i1 artifacts/pack_id_set.json -i2 artifacts/id_set.json -o artifacts/id_set.json
+
+    - name: Upload ID set file to artifacts
+      if: always()
+      uses: actions/upload-artifact@v1
+      with:
+        name: id_set
+        path: artifacts/id_set.json
     - name: Validate all packs
       run: |
-        demisto-sdk validate -a
+        git fetch
+        git branch
+        demisto-sdk validate -a --id-set-path artifacts/id_set.json
     - name: Create Artifacts
-      if: ${{ always() }}
-      run: demisto-sdk create-content-artifacts --packs --artifacts_path artifacts/
+      if: always()
+      run: demisto-sdk create-content-artifacts --artifacts_path artifacts
     - name: Archive Content Packs zip
-      if: ${{ always() }}
+      if: always()
       uses: actions/upload-artifact@v1
       with:
         name: content_packs
