@@ -53,7 +53,6 @@ jobs:
         path: artifacts/lint_debug_log.log
     - name: Create ID Set
       run: |
-
         demisto-sdk create-id-set -o artifacts/pack_id_set.json
 
         gsutil -m cp -r gs://marketplace-dist/content/private_id_set.json artifacts/private_id_set.json
