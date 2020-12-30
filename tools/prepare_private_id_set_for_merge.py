@@ -5,11 +5,11 @@ import argparse
 def get_new_pack_name_from_new_id_set():
     with open('artifacts/pack_id_set.json', 'r') as id_set_file:
         private_id_set = json.load(id_set_file)
-    new_pack_name = ''
+    new_pack_name = []
     for content_entity, content_entity_value_list in private_id_set.items():
         for content_entity_value in content_entity_value_list[:]:
             content_item_value = content_entity_value.get(list(content_entity_value.keys())[0], {})
-            new_pack_name = content_item_value.get('pack')
+            new_pack_name.append(content_item_value.get('pack'))
             break
     return new_pack_name
 
@@ -29,7 +29,7 @@ def remove_old_pack_from_private_id_set(private_id_set, new_pack_name):
     for content_entity, content_entity_value_list in private_id_set.items():
         for content_entity_value in content_entity_value_list[:]:
             content_item_value = content_entity_value.get(list(content_entity_value.keys())[0], {})
-            if content_item_value.get('pack') == new_pack_name:
+            if content_item_value.get('pack') in new_pack_name:
                 content_entity_value_list.remove(content_entity_value)
     return private_id_set
 
