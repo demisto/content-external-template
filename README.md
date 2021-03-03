@@ -46,4 +46,5 @@ git push origin master
 ```
 
 **IMPORTANT: Merge the pull request only after it approved by one of XSOAR content team members.**
- 
+
+See example repository [content-helloworld-premium](https://github.com/demisto/content-helloworld-premium)
