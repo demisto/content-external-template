@@ -23,7 +23,7 @@ git push origin master
 ```
 
 ### Adding xsoar-bot as a contributor
-Follow [invite collaborator](https://help.github.jp/enterprise/2.11/user/articles/inviting-collaborators-to-a-personal-repository/) guide.  
+Follow [invite collaborator](https://docs.github.com/en/github/setting-up-and-managing-your-github-user-account/inviting-collaborators-to-a-personal-repository) guide.  
 Invite `xsoar-bot` user.
 
 ### Setup your development environment
