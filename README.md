@@ -29,6 +29,8 @@ Invite `xsoar-bot` user.
 ### Setup your development environment
 Follow [development setup](https://xsoar.pan.dev/docs/integrations/dev-setup) article
 
+
+# Adding Your Pack
 ### Create your first pack
 Creating a pack is the same process as in the public repository. Follow the [Bofore you start](https://xsoar.pan.dev/docs/concepts/getting-started-guide#before-you-start-developing) and the [Contribution](https://xsoar.pan.dev/docs/contributing/contributing) guides to: design, execute and test your work.
 
@@ -37,6 +39,7 @@ Creating a pack is the same process as in the public repository. Follow the [Bof
 Make sure your work is done on a designated branch (**not Master**). Then in your private repository [open a pull request](https://help.github.com/articles/creating-a-pull-request-from-a-fork/) from the created branch to the Master branch. When the pull request is ready for review, assign `xsoar-bot` and add the label `ready-for-review`.  
 At this point we might ask you to invite and assign someone from the XSOAR content team members to review the pull request.
 
+# Extras
 ### Update your repository
 In order to sync/merge from the `content-external-template` repository from time to time.
 ```
