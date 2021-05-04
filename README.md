@@ -30,7 +30,7 @@ Invite `xsoar-bot` user.
 Follow [development setup](https://xsoar.pan.dev/docs/integrations/dev-setup) article
 
 ### Create your first pack
-Creating a pack is the same process as in the public repository. Follow [Getting Started Guide](https://xsoar.pan.dev/docs/integrations/getting-started-guide)
+Creating a pack is the same process as in the public repository. Follow the [Bofore you start](https://xsoar.pan.dev/docs/concepts/getting-started-guide#before-you-start-developing) and the [Contribution](https://xsoar.pan.dev/docs/contributing/contributing) guides to: design, execute and test your work.
 
 ### Opening a Pull Request
 
