@@ -32,7 +32,7 @@ Follow [development setup](https://xsoar.pan.dev/docs/integrations/dev-setup) ar
 
 # Adding Your Pack
 ### Create your first pack
-Creating a pack is the same process as in the public repository. Follow the [Bofore you start](https://xsoar.pan.dev/docs/concepts/getting-started-guide#before-you-start-developing) and the [Contribution](https://xsoar.pan.dev/docs/contributing/contributing) guides that will help you to design, execute and test your work.
+Creating a pack is the same process as in the public repository. Follow the [Bofore you start](https://xsoar.pan.dev/docs/concepts/getting-started-guide#before-you-start-developing) and the [Contribution](https://xsoar.pan.dev/docs/contributing/contributing) guides that will help you to design, develop and test your work.
 
 ### Opening a Pull Request
 
