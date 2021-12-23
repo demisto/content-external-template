@@ -13,22 +13,13 @@ RESELLER="Reseller"
 tmp_dir=$(mktemp -d)
 mkdir Packs
 
-# Function to bootstrap Premium Content
-bootstrap_premium () {
+# Function to bootstrap
+bootstrap () {
 	echo "Starting bootstrap of $PREMIUM content Pack..."
 	
 	git clone --quiet https://github.com/demisto/content-helloworld-premium.git "$tmp_dir"
-	mv "$tmp_dir/Packs/HelloWorldPremium" ./Packs
-	output_dir=$(realpath ./Packs/HelloWorldPremium)
-}
-
-# Function to bootstrap resller Content
-bootstrap_reseller () {
-	echo "Starting bootstrap of $RESELLER content Pack..."
-
-	git clone --quiet https://github.com/demisto/content-helloworld-premium.git "$tmp_dir"
-	mv "$tmp_dir/Packs/HelloWorldPremium-Resell/" ./Packs
-	output_dir=$(realpath ./Packs/HelloWorldPremium-Resell)
+	mv "$tmp_dir/Packs/$1" ./Packs
+	output_dir=$(realpath ./Packs/$1)
 }
 
 
@@ -39,12 +30,12 @@ do
     case $opt in
 
         $PREMIUM)
-			bootstrap_premium
+			bootstrap "HelloWorldPremium"
 			break
             ;;
 
         $RESELLER)
-            bootstrap_reseller
+            bootstrap "HelloWorldPremium-Resell"
 			break
             ;;
 
