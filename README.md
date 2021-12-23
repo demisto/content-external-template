@@ -1,10 +1,11 @@
 # Getting Started
 
-## Creating New Repository
+## Setting up the repository in Github
+#### Creating new private repository
 
 Press the `Use this Template` button and choose to fork the repository as private repository.
 
-### In case the private repository exists
+#### In case you already have a private repository
 
 ```bash
 git clone --bare https://github.com/demisto/content-external-template.git
@@ -42,9 +43,9 @@ If you're not sure about the expected structure of this repo, you can run:
 ./tools/boostrap.sh
 ```
 
-This will create a new folder `./Packs/HelloWorldPremium` with a [HelloWorld Premium Pack](See example repository [content-helloworld-premium](https://github.com/demisto/content-helloworld-premium) structure.
+The script will prompt you to select the [type of paid content](https://xsoar.pan.dev/docs/partners/paid-packs#what-can-be-paid) and will accordingly create the necessary Pack format.
 
-If you're familiar with the structure, you can jump to the 'Create your first pack' section below.
+If you're familiar with the Pack format, you can jump to the 'Create your first pack' section below. If not, see [Content Packs Structure](https://xsoar.pan.dev/docs/packs/packs-format)
 
 ### Create your first pack
 
@@ -56,7 +57,7 @@ Creating a pack is the same process as in the public repository. Follow the [Bef
 - In your private repository [open a pull request](https://help.github.com/articles/creating-a-pull-request-from-a-fork/) from the created branch to the Master branch.
 - When the pull request is ready for review, assign `xsoar-bot` and add the label `ready-for-review`. At this point we might ask you to invite and assign someone from the XSOAR content team members to review the pull request.
 
-## Extras
+# Extras
 
 ### Update your repository
 
