@@ -15,7 +15,7 @@ mkdir Packs
 
 # Function to bootstrap
 bootstrap () {
-	echo "Starting bootstrap of $PREMIUM content Pack..."
+	echo "Starting bootstrap of content '$2' Pack..."
 	
 	git clone --quiet https://github.com/demisto/content-helloworld-premium.git "$tmp_dir"
 	mv "$tmp_dir/Packs/$1" ./Packs
@@ -30,12 +30,12 @@ do
     case $opt in
 
         $PREMIUM)
-			bootstrap "HelloWorldPremium"
+			bootstrap "HelloWorldPremium" $opt
 			break
             ;;
 
         $RESELLER)
-            bootstrap "HelloWorldPremium-Resell"
+            bootstrap "HelloWorldPremium-Resell" $opt
 			break
             ;;
 
