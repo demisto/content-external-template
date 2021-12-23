@@ -27,22 +27,22 @@ PS3='Please make a selection: '
 options=($PREMIUM $RESELLER)
 select opt in "${options[@]}"
 do
-    case $opt in
+	case $opt in
 
-        $PREMIUM)
+		$PREMIUM)
 			bootstrap "HelloWorldPremium" $opt
 			break
-            ;;
+			;;
 
-        $RESELLER)
-            bootstrap "HelloWorldPremium-Resell" $opt
+		$RESELLER)
+			bootstrap "HelloWorldPremium-Resell" $opt
 			break
-            ;;
+			;;
 
-        *) 
+		*) 
 			echo "invalid option $REPLY"
 			;;
-    esac
+	esac
 done
 
 
