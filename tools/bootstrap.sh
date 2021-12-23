@@ -40,7 +40,7 @@ do
 			;;
 
 		*) 
-			echo "invalid option $REPLY"
+			echo "Invalid option '$opt'. Please type 1 or 2."
 			;;
 	esac
 done
