@@ -43,9 +43,9 @@ If you're not sure about the expected structure of this repo, you can run:
 ./tools/boostrap.sh
 ```
 
-The script will prompt you to select the [type of paid content](https://xsoar.pan.dev/docs/partners/paid-packs#what-can-be-paid) and will accordingly create the necessary Pack format.
+The script will prompt you to select the [type of paid content](https://xsoar.pan.dev/docs/partners/premium-packs#what-can-be-in-a-premium-pack) and will accordingly create the necessary Pack format.
 
-If you're familiar with the Pack format, you can jump to the 'Create your first pack' section below. If not, see [Content Packs Structure](https://xsoar.pan.dev/docs/packs/packs-format)
+If you're familiar with the Pack format, you can jump to the **Create your first pack** section below. If not, see [Content Packs Structure](https://xsoar.pan.dev/docs/packs/packs-format)
 
 ### Create your first pack
 
@@ -54,7 +54,7 @@ Creating a pack is the same process as in the public repository. Follow the [Bef
 ### Opening a Pull Request
 
 - Make sure your work is done on a designated branch (**not `master`**). This will help us conduct a proper review of the pack.
-- In your private repository [open a pull request](https://help.github.com/articles/creating-a-pull-request-from-a-fork/) from the created branch to the Master branch.
+- In your private repository [open a pull request](https://help.github.com/articles/creating-a-pull-request-from-a-fork/) from the created branch to the master branch.
 - When the pull request is ready for review, assign `xsoar-bot` and add the label `ready-for-review`. At this point we might ask you to invite and assign someone from the XSOAR content team members to review the pull request.
 
 # Extras
