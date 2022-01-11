@@ -45,6 +45,10 @@ If you're not sure about the expected structure of this repo, you can run:
 
 The script will prompt you to select the [type of paid content](https://xsoar.pan.dev/docs/partners/premium-packs#what-can-be-in-a-premium-pack) and will accordingly create the necessary Pack format.
 
+
+You can also review the [resell Pack structure](https://github.com/demisto/content-helloworld-premium/tree/master/Packs/HelloWorldPremium-Resell) and [premium Pack structure](https://github.com/demisto/content-helloworld-premium/tree/master/Packs/HelloWorldPremium) instead and use those to guide you what the Pack is expected to look like.
+
+
 If you're familiar with the Pack format, you can jump to the **Create your first pack** section below. If not, see [Content Packs Structure](https://xsoar.pan.dev/docs/packs/packs-format)
 
 ### Create your first pack
