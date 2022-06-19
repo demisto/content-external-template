@@ -5,15 +5,13 @@ output_paths=(
     "CommonServerPowerShell.ps1"
     "demistomock.py"
     "demistomock.ps1"
-    "dev_envs/default_python2/Pipfile"
-    "dev_envs/default_python2/Pipfile.lock"
-    "dev_envs/default_python3/Pipfile"
-    "dev_envs/default_python3/Pipfile.lock"
     "dev_envs/pytest/conftest.py"
-    "dev-requirements-py2.txt"
-    "dev-requirements-py3.txt"
+    "pyproject.toml"
+    "poetry.lock"
     "package.json"
     "package-lock.json"
+    ".hooks/pre-commit"
+    ".hooks/bootstrap"
 )
 
 url_to_fetch_from=(
