@@ -38,7 +38,7 @@ do
     output_path=${output_paths[$i]}
     url=${url_to_fetch_from[$i]}
 
-    $(curl -o $output_path $url --fail)
+    $(curl -o "$output_path" $url --fail)
     exit_code=$?
     is_failed=$(($is_failed+$exit_code))
 
