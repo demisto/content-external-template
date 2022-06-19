@@ -27,7 +27,7 @@ url_to_fetch_from=(
     "https://raw.githubusercontent.com/demisto/content/master/package.json"
     "https://raw.githubusercontent.com/demisto/content/master/package-lock.json"
     "https://raw.githubusercontent.com/demisto/content/master/.hooks/pre-commit"
-    "https://raw.githubusercontent.com/demisto/content/master/.hooks/bootstrap
+    "https://raw.githubusercontent.com/demisto/content/master/.hooks/bootstrap"
 )
 
 mkdir -p dev_envs/pytest
