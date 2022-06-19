@@ -10,8 +10,8 @@ output_paths=(
     "poetry.lock"
     "package.json"
     "package-lock.json"
-    "hooks/pre-commit"
-    "hooks/bootstrap"
+    ".hooks/pre-commit"
+    ".hooks/bootstrap"
 )
 
 url_to_fetch_from=(
@@ -29,6 +29,7 @@ url_to_fetch_from=(
 )
 
 mkdir -p dev_envs/pytest
+mkdir -p .hooks
 
 is_failed=0
 
