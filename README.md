@@ -40,7 +40,7 @@ Follow [development setup](https://xsoar.pan.dev/docs/integrations/dev-setup) ar
 If you're not sure about the expected structure of this repo, you can run:
 
 ```bash
-./tools/boostrap.sh
+./tools/bootstrap.sh
 ```
 
 The script will prompt you to select the [type of paid content](https://xsoar.pan.dev/docs/partners/premium-packs#what-can-be-in-a-premium-pack) and will accordingly create the necessary Pack format.
