@@ -74,4 +74,6 @@ git pull content-template master
 git push origin master
 ```
 
+%TESTCHANGE%%TESTCHANGE%%TESTCHANGE%%TESTCHANGE%
+
 **IMPORTANT: Merge the pull request only after it approved by one of XSOAR content team members.**
