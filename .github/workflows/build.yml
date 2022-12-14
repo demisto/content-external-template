@@ -70,7 +70,7 @@ jobs:
     - name: import files
       run:  |
         mkdir -p ./Tests/Marketplace/
-        cp /builds/xsoar/content/Tests/Marketplace/approved_categories.json ./Tests/Marketplace/
+        gsutil -m cp -r gs://marketplace-dist/content/Tests/Marketplace/approved_categories.json ./Tests/Marketplace/
     - name: Validate all packs
       run: |
         git fetch
