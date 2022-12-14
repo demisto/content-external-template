@@ -67,6 +67,11 @@ jobs:
       with:
         name: id_set
         path: artifacts/id_set.json
+    - name: import files
+      run:  |
+        - cd /builds/xsoar/content-external-template
+        - mkdir -p ./Tests/Marketplace/
+        - cp /builds/xsoar/content/Tests/Marketplace/approved_categories.json ./Tests/Marketplace/
     - name: Validate all packs
       run: |
         git fetch
