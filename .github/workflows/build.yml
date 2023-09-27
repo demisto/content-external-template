@@ -45,7 +45,7 @@ jobs:
     - name: Run lint on all the packs
       run: |
         mkdir artifacts
-        demisto-sdk lint -a --log_file_path ./artifacts/lint_debug_log.log
+        demisto-sdk lint -a --log-file-path ./artifacts/lint_debug_log.log
     - name: Archive unit test results
       uses: actions/upload-artifact@v1
       with:
