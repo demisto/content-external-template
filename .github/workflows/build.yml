@@ -33,7 +33,7 @@ jobs:
 
         if [ ! "$(ls -A Packs)" ]; then
           echo No files in Packs
-          tools/update_helloworld_example.sh
+          # tools/update_helloworld_example.sh
         fi
 
         tools/update_repo.sh
