@@ -51,7 +51,7 @@ jobs:
       with:
         name: lint_debug_log
         path: artifacts/lint_debug_log.log
-        if-no-files-found: "ignore"
+        if-no-files-found: "ignore" # lint may not create a file if the repo has no code files [CIAC-7718]
   
     - name: Create ID Set
       run: |
