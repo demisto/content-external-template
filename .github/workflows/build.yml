@@ -50,8 +50,9 @@ jobs:
       uses: actions/upload-artifact@v4
       with:
         name: lint_debug_log
-        path: artifacts/lint_debug_log.log3
+        path: artifacts/lint_debug_log.log
         if-no-files-found: "ignore"
+  
     - name: Create ID Set
       run: |
         demisto-sdk create-id-set -o artifacts/pack_id_set.json
@@ -68,6 +69,8 @@ jobs:
       with:
         name: id_set
         path: artifacts/id_set.json
+        if-no-files-found: "error"
+
     - name: Validate all packs
       run: |
         git fetch
@@ -82,3 +85,4 @@ jobs:
       with:
         name: content_packs
         path: artifacts/content_packs.zip
+        if-no-files-found: "error"
