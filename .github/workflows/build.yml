@@ -47,10 +47,11 @@ jobs:
         mkdir artifacts
         demisto-sdk lint -a --log-file-path ./artifacts/lint_debug_log.log
     - name: Archive unit test results
-      uses: actions/upload-artifact@v1
+      uses: actions/upload-artifact@v4
       with:
         name: lint_debug_log
         path: artifacts/lint_debug_log.log
+        if-no-files-found: "ignore"
     - name: Create ID Set
       run: |
         demisto-sdk create-id-set -o artifacts/pack_id_set.json
@@ -63,7 +64,7 @@ jobs:
 
     - name: Upload ID set file to artifacts
       if: always()
-      uses: actions/upload-artifact@v1
+      uses: actions/upload-artifact@v4
       with:
         name: id_set
         path: artifacts/id_set.json
@@ -77,7 +78,7 @@ jobs:
       run: demisto-sdk create-content-artifacts --artifacts_path artifacts
     - name: Archive Content Packs zip
       if: always()
-      uses: actions/upload-artifact@v1
+      uses: actions/upload-artifact@v4
       with:
         name: content_packs
         path: artifacts/content_packs.zip
