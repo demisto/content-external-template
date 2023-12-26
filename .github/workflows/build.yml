@@ -33,7 +33,7 @@ jobs:
 
         if [ ! "$(ls -A Packs)" ]; then
           echo No files in Packs
-          # tools/update_helloworld_example.sh
+          tools/update_helloworld_example.sh
         fi
 
         tools/update_repo.sh
@@ -50,7 +50,7 @@ jobs:
       uses: actions/upload-artifact@v4
       with:
         name: lint_debug_log
-        path: artifacts/lint_debug_log.log
+        path: artifacts/lint_debug_log.log3
         if-no-files-found: "ignore"
     - name: Create ID Set
       run: |
